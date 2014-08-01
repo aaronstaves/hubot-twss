@@ -1,4 +1,4 @@
-# Hubot: hubot-substitute 
+# Hubot: hubot-script-boilerplate
 
 [![Build Status](https://travis-ci.org/aaronstaves/hubot-script-boilerplate.svg?branch=master)](https://travis-ci.org/aaronstaves/hubot-script-boilerplate)
 
