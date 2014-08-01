@@ -31,5 +31,8 @@
   "homepage": "https://github.com/aaronstaves/hubot-script-boilerplate",
   "scripts": {
     "test": "mocha --compilers coffee:coffee-script --reporter spec"
+  },
+  "directories": {
+    "test": "test"
   }
 }
