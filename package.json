@@ -1,21 +1,22 @@
 {
-  "name": "hubot-script-boilerplate",
-  "description": "Hubot script boilerplate",
-  "version": "0.0.2",
+  "name": "hubot-twss",
+  "description": "Hubot TWSS",
+  "version": "0.0.1",
   "author": "Aaron Staves <aaron@aarons.io>",
   "license": "MIT",
   "keywords": [
     "hubot",
     "hubot-scripts",
     "script",
-    "boilerplate"
+    "twss",
+    "thats what she said"
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:aaronstaves/hubot-script-boilerplate.git"
+    "url": "git@github.com:aaronstaves/hubot-twss.git"
   },
   "bugs": {
-    "url": "https://github.com/aaronstaves/hubot-script-boilerplate/issues"
+    "url": "https://github.com/aaronstaves/hubot-twss/issues"
   },
   "dependencies": {
     "coffee-script": "~1.6.3"
@@ -28,7 +29,7 @@
     "sinon": "~1.9.0"
   },
   "main": "index.coffee",
-  "homepage": "https://github.com/aaronstaves/hubot-script-boilerplate",
+  "homepage": "https://github.com/aaronstaves/hubot-twss",
   "scripts": {
     "test": "mocha --compilers coffee:coffee-script --reporter spec"
   },
