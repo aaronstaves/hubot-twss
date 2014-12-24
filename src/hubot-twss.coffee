@@ -12,8 +12,10 @@ module.exports = (robot) ->
   #
   # listens to script or script me 
   #
-  robot.respond /script( me)? (.*)/i, (msg) ->
+  twss = require 'twss'
+  robot.hear /(.*)/i, (msg) ->
 
-    thing = msg.match[2]
-    msg.send("script " + thing)
+    string = msg.match[0];
+    if twss.is string
+    	msg.send('twss')
 

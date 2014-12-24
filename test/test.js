@@ -4,7 +4,7 @@ var path   = require("path");
 var Robot       = require("hubot/src/robot");
 var TextMessage = require("hubot/src/message").TextMessage;
 
-describe("Hubot-script Functionality", function() {
+describe("Hubot-twss Functionality", function() {
   var robot;
   var user;
   var adapter;
@@ -57,33 +57,54 @@ describe("Hubot-script Functionality", function() {
     */
     // Tell hubot script abc123
     //
-    it("responds to script abc123", function(done) {
+    it("Nice weather we're having today", function(done) {
+        var replied = false;
+
+        // If it doesn't reply, we're good
+      
+        setTimeout(function() { 
+          if (replied) { 
+            done( new Error("replied with \""+replied+"\" when shouldn't have, no replace string") );
+          }
+          else {
+            done(); 
+          }
+        }, 50);
+
         adapter.on("send", function(envelope, strings) {
-            try { 
-              expect(strings[0]).to.equal("script abc123");
-              done();
-            } catch(e) { 
-              done(e);
-            }
+           replied = strings[0];
         });
 
       // Send from first user
-      adapter.receive(new TextMessage(user, robot.name+" script abc123"));
+      adapter.receive(new TextMessage(user, "Nice weather we're having today"));
     });
 
-    it("responds to script me abc123", function(done) {
 
-        adapter.on("send", function(envelope, strings) {
-            try { 
-              expect(strings[0]).to.equal("script abc123");
-              done();
-            } catch(e) { 
-              done(e);
-            }
-        });
+    it("Can you make it harder?", function(done) {
+      adapter.on("send", function(envelope, strings) {
+        try { 
+          expect(strings[0]).to.equal("twss");
+          done();
+        } catch(e) { 
+          done(e);
+        }
+      });
 
-      // Send from second user
-      adapter.receive(new TextMessage(user2, robot.name+" script me abc123"));
+      adapter.receive(new TextMessage(user, "Can you make it harder?"));
     });
+
+    it("You're not going fast enough!", function(done) {
+      adapter.on("send", function(envelope, strings) {
+        try { 
+          expect(strings[0]).to.equal("twss");
+          done();
+        } catch(e) { 
+          done(e);
+        }
+      });
+
+      adapter.receive(new TextMessage(user, "You're not going fast enough!"));
+    });
+
   });
 });
