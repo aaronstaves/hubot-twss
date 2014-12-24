@@ -30,11 +30,14 @@ Run `npm install hubot-twss`
 ## Sample Interaction
 
 ```
-user> script abc123 
-Hubot> script abc123
+aaron> Nice weather we're having today
+(no response)
 ```
 ```
-aaron> script me abc123
-Hubot> script abc123
+aaron> Can you make it harder?
+Hubot> twss
 ```
+```
+aaron> You're not going fast enough!
+Hubot> twss
 ```

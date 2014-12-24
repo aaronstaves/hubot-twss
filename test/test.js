@@ -58,10 +58,10 @@ describe("Hubot-twss Functionality", function() {
     // Tell hubot script abc123
     //
     it("Nice weather we're having today", function(done) {
+
         var replied = false;
 
         // If it doesn't reply, we're good
-      
         setTimeout(function() { 
           if (replied) { 
             done( new Error("replied with \""+replied+"\" when shouldn't have, no replace string") );
@@ -104,6 +104,26 @@ describe("Hubot-twss Functionality", function() {
       });
 
       adapter.receive(new TextMessage(user, "You're not going fast enough!"));
+    });
+
+    it("i...", function(done) {
+        var replied = false;
+
+        // If it doesn't reply, we're good
+        setTimeout(function() { 
+          if (replied) { 
+            done( new Error("replied with \""+replied+"\" when shouldn't have, no replace string") );
+          }
+          else {
+            done(); 
+          }
+        }, 50);
+
+        adapter.on("send", function(envelope, strings) {
+           replied = strings[0];
+        });
+
+      adapter.receive(new TextMessage(user, "i..."));
     });
 
   });
