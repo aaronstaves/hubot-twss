@@ -25,7 +25,7 @@ module.exports = (robot) ->
     string = msg.match[0];
     prob = process.env.HUBOT_TWSS_PROB or 0.98
 
-    console.log twss.prob string
+    robot.logger.debug twss.prob string
     if ( twss.prob string ) >= prob
       msg.send('twss')
 
